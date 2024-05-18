@@ -1,0 +1,40 @@
+﻿@model Ado.NetCrudWith_Procedure.Models.Employee
+
+<h1>Edit Employee</h1>
+
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="EmployeeID" />
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="Department"></label>
+        <input asp-for="Department" />
+    </div>
+    <div>
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" />
+    </div>
+    <div>
+        <label asp-for="JoinDate"></label>
+        <input asp-for="JoinDate" type="date" />
+    </div>
+    <div>
+        <label asp-for="City"></label>
+        <input asp-for="City" />
+    </div>
+    <div>
+        <label asp-for="Country"></label>
+        <input asp-for="Country" />
+    </div>
+    <div>
+        <label asp-for="State"></label>
+        <input asp-for="State" />
+    </div>
+    <button type="submit">Update</button>
+</form>

@@ -1,0 +1,44 @@
+﻿@model List<Ado.NetCrudWith_Procedure.Models.Employee>
+
+<h1>Employee List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>EmployeeID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Join Date</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeID</td>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+                <td>@employee.Department</td>
+                <td>@employee.Salary</td>
+                <td>@employee.JoinDate.ToShortDateString()</td>
+                <td>@employee.City</td>
+                <td>@employee.Country</td>
+                <td>@employee.State</td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <a asp-action="Update" asp-route-id="@employee.EmployeeID" class="btn btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@employee.EmployeeID" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Add Employee</a>
